@@ -1,10 +1,8 @@
-import org.w3c.dom.ls.LSOutput;
+package javaornek;
 
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.*;
 
 public class Main {
     public ProductInfo product;
@@ -20,6 +18,11 @@ public class Main {
         System.out.println("eklenecek ürünün fiyatını giriniz");
         int productPrice = input.nextInt();
 
+        product = ProductInfo.record()
+                .addProductName(productName)
+                .addProductId(productId)
+                .addProductPrice(productPrice)
+                .recorder();
 
         saveProduct(product);
         menu();
@@ -45,11 +48,11 @@ public class Main {
     }
 
     public void products(){
-        Map<Integer, ProductInfo> map = this.urunBilgisi;
-        map.forEach((key, value) -> {
-            System.out.println("ürün ID : "+ key);
-            System.out.println("ürün Name : "+ value.productName);
-        });
+            Map<Integer, ProductInfo> map = this.urunBilgisi;
+            map.forEach((key, value) -> {
+                System.out.println("ürün ID : " + key);
+                System.out.println("ürün Name : " + value.productName);
+            });
         menu();
     }
 
@@ -72,6 +75,7 @@ public class Main {
             System.out.println("silinecek ürünün id'sini giriniz");
             int productId = input.nextInt();
             deleteProduct(this.urunBilgisi, productId);
+            menu();
 
         }else if (islem == 3){
             products();
