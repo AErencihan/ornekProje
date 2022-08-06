@@ -1,2 +1,7 @@
-package javaornek;public class ProcessOne {
+package javaornek;
+
+public class ProcessOne {
+
+
+
 }

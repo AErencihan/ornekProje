@@ -25,14 +25,6 @@ public class ProductInfo{
 
         }
 
-        public Record(String productName, int productId, int productPrice) {
-            this.productName = productName;
-            this.productId = productId;
-            this.productPrice = productPrice;
-        }
-
-
-
         public Record addProductName(String productName){
             this.productName = productName;
             return this;
@@ -48,16 +40,10 @@ public class ProductInfo{
             return this;
         }
         public ProductInfo recorder(){
-            return new ProductInfo(productName, productId, productPrice);
+            return new ProductInfo(productName,productId,productPrice);
         }
 
     }
-
-
-
-
-
-
 
     public void showInfo(){
         System.out.println("urunun adı :" +this.productName);
